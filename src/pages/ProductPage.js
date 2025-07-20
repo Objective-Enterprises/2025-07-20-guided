@@ -10,14 +10,21 @@ import Spinner from 'react-bootstrap/Spinner';
 
 
 const ProductPage = () => {
+  const [selectedQuantity, setSelectedQuantity] = useState('')
   const { id } = useParams();
-  
+
+  const quantityDropdownOptions = []
+  for (let i = 1; i <= 10; i++) {
+    const option = <option key={i} value={i}>{i}</option>
+    quantityDropdownOptions.push(option)
+  }
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, success, error, product } = productDetails;
   const loggedInUser = JSON.parse(sessionStorage.getItem('userInfo'));
   console.log(loggedInUser);
   const dispatch = useDispatch();
+
 
   //WRITE YOUR CODE HERE
 
