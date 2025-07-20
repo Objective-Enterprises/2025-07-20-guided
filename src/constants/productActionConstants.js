@@ -1,2 +1,4 @@
 export const START_PRODUCTS = 'START_PRODUCTS'
 export const END_PRODUCTS = 'END_PRODUCTS'
+export const START_PRODUCT = 'START_PRODUCT'
+export const END_PRODUCT = 'END_PRODUCT'
