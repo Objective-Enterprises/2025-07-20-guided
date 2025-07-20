@@ -24,11 +24,14 @@ const userInfoFromLocalStorage = sessionStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
   : null;
 
-//WRITE YOUR CODE HERE
+const productsFromLocalStorage = localStorage.getItem('products')
+  ? JSON.parse(localStorage.getItem('products'))
+  : []
 
 const initialState = {
-  login: { userInfo: userInfoFromLocalStorage }
-  //WRITE YOUR CODE HERE
+  login: { userInfo: userInfoFromLocalStorage },
+  productList: { products: productsFromLocalStorage },
+  productDetails: { product: {} }
 };
 const middleware = [thunk];
 

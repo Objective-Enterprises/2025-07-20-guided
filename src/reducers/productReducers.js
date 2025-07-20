@@ -7,6 +7,8 @@ export const listProductsReducer = (state = { products: [] }, action) => {
       return newState
     }
     case END_PRODUCTS: {
+      const json = JSON.stringify(action.payload)
+      localStorage.setItem('products', json)
       const newState = { ...state, loading: false, products: action.payload }
       return newState
     }
