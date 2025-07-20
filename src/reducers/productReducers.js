@@ -25,7 +25,12 @@ export const fetchProductDetailsReducer = (state = { product: {} }, action) => {
       return newState
     }
     case END_PRODUCT: {
-      const newState = { ...state, loading: true, product: action.payload }
+      const newState = {
+        ...state,
+        loading: false,
+        success: true,
+        product: action.payload
+      }
       return newState
     }
     default: {

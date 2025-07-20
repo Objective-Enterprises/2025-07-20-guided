@@ -19,14 +19,16 @@ const ProductPage = () => {
     quantityDropdownOptions.push(option)
   }
 
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, success, error, product } = productDetails;
   const loggedInUser = JSON.parse(sessionStorage.getItem('userInfo'));
   console.log(loggedInUser);
   const dispatch = useDispatch();
-
-
-  //WRITE YOUR CODE HERE
+  useEffect(() => {
+    dispatch(fetchProductDetails(id))
+  }, [])
+  const loading = useSelector(state => state.productDetails.loading)
+  const error = useSelector(state => state.productDetails.error)
+  const success = useSelector(state => state.productDetails.success)
+  const product = useSelector(state => state.productDetails.product)
 
   return (
     <>
