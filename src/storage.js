@@ -7,12 +7,16 @@ import {
   userLogoutReducer,
 } from "./reducers/userReducers";
 
-//WRITE YOUR CODE HERE
+import {
+  listProductsReducer,
+  fetchProductDetailsReducer
+} from './reducers/productReducers'
 
 const reducer = combineReducers({
   login: userLoginReducer,
-  logout: userLogoutReducer
-  //WRITE YOUR CODE HERE
+  logout: userLogoutReducer,
+  productList: listProductsReducer,
+  productDetails: fetchProductDetailsReducer
 });
 
 
